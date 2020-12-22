@@ -4,49 +4,59 @@
 <div class="container">
     <div class="row">
         <div class="col-8">
-            <h2 class="my-3">Form Tambah Data Komik</h2>
-
-            <form action="/komik/save" method="post" enctype="multipart/form-data">
-                <?= csrf_field(); ?>
+            <h2>Form Tambah Data Komik</h2>
+            <form>
                 <div class="form-group row">
-                    <label for="judul" class="col-sm-2 col-form-label">Judul</label>
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" id="judul" name="judul" autofocus value="<?= old('judul'); ?>">
-                        <div id="validationServer03Feedback" class="invalid-feedback">
-                            <?= $validation->getError('judul'); ?>
-                        </div>
+                        <input type="email" class="form-control" id="inputEmail3">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
+                    <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="penulis" name="penulis" value="<?= old('judul'); ?>">
+                        <input type="password" class="form-control" id="inputPassword3">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="penerbit" class="col-sm-2 col-form-label">Penerbit</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="penerbit" name="penerbit" value="<?= old('judul'); ?>">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="sampul" class="col-sm-2 col-form-label">Sampul</label>
-                    <div class="col-sm-2">
-                        <img src="/img/default.png" class="img-thumbnail img-preview">
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input <?= ($validation->hasError('sampul')) ? 'is-invalid' : ''; ?>" id="sampul" name="sampul" onchange="previewImg()">
-                            <div id="validationServer03Feedback" class="invalid-feedback">
-                                <?= $validation->getError('sampul'); ?>
+                <fieldset class="form-group">
+                    <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                <label class="form-check-label" for="gridRadios1">
+                                    First radio
+                                </label>
                             </div>
-                            <label class="custom-file-label" for="sampul">Pilih Gambar</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                <label class="form-check-label" for="gridRadios2">
+                                    Second radio
+                                </label>
+                            </div>
+                            <div class="form-check disabled">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+                                <label class="form-check-label" for="gridRadios3">
+                                    Third disabled radio
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="form-group row">
+                    <div class="col-sm-2">Checkbox</div>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck1">
+                            <label class="form-check-label" for="gridCheck1">
+                                Example checkbox
+                            </label>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Tambah Data</button>
+                        <button type="submit" class="btn btn-primary">Sign in</button>
                     </div>
                 </div>
             </form>

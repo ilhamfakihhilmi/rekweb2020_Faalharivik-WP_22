@@ -7,7 +7,7 @@ class Pages extends BaseController
     public function index()
     {
         $data = [
-            'title' => 'Home | WebProgrammingUNPAS',
+            'title' => 'Home | CesarWeb',
             'tes' => ['satu', 'dua', 'tiga']
         ];
         return view('pages/home', $data);
@@ -16,26 +16,28 @@ class Pages extends BaseController
     public function about()
     {
         $data = [
-            'title' => 'About Me'
+            'title' => 'Home | About Me '
         ];
+
         return view('pages/about', $data);
     }
 
     public function contact()
     {
         $data = [
-            'title' => 'Contact Us',
-            'alamat' => [
-                [
-                    'tipe' => 'Rumah',
-                    'alamat' => 'Jl.Sakura No.17',
-                    'kota' => 'Bandung'
-                ],
-                [
-                    'tipe' => 'Kantor',
-                    'alamat' => 'Jl.Tulip No.23',
-                    'kota' => 'Bandung'
-                ]
+            'title' => 'Contact Us!',
+            'alamat' =>
+            [
+                'tipe' => 'Rumah',
+                'alamat' => 'Jatinunggal',
+                'kota' => 'Sumedang'
+            ],
+            [
+
+                'tipe' => 'Kontrakan',
+                'alamat' => 'Jl. Terusan Jakarta',
+                'kota' => 'Bandung'
+
             ]
         ];
         return view('pages/contact', $data);
