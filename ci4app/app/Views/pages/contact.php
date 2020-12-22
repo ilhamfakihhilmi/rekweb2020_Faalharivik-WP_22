@@ -7,9 +7,9 @@
             <h2>Contact Us</h2>
             <?php foreach ($alamat as $a) : ?>
                 <ul>
-                    <li><?= $a['tipe']; ?>'ilham'</li>
-                    <li><?= $a['alamat']; ?>'sds'</li>
-                    <li><?= $a['kota']; ?>'sadaw'</li>
+                    <li><?= $a['tipe']; ?></li>
+                    <li><?= $a['alamat']; ?></li>
+                    <li><?= $a['kota']; ?></li>
                 </ul>
             <?php endforeach; ?>
         </div>

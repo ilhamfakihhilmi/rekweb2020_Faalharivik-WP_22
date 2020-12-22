@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-        <a class="navbar-brand" href="<?= base_url('/'); ?>">CesarWeb</a>
+        <h3 class="logo">Teknow<span>logue</span></h3>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,6 +10,7 @@
                 <a class="nav-link" href="/pages/about">About</a>
                 <a class="nav-link" href="/pages/contact">Contact</a>
                 <a class="nav-link" href="/komik">Komik</a>
+                <a class="nav-link" href="/orang">Orang</a>
             </div>
         </div>
     </div>
