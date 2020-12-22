@@ -44,11 +44,15 @@ header:after{
     z-index: 2;
 }
 
+.navbar.nav-link {
+    color: white;
+}
+
 .product{
     position: absolute;
-    width: 800px;
-    top : 80px;
-    right: 0px;
+    width: 950px;
+    padding-bottom : 10px;
+    right: -20px;
     z-index: 20;
 }
 
@@ -79,15 +83,6 @@ header:after{
     background: linear-gradient(to bottom, rgba(172, 38, 38, 0.05))
 }
 
-.navbar .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar-nav {
-  text-color: white;
-}
 
 .logo{
     color: #fff;
@@ -101,14 +96,6 @@ header:after{
     font-weight: 300;
 }
 
-.hamburger-menu{
-    width: 1.55rem;
-    height: 1.5rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
 
 .bar{
     position: relative;
@@ -135,18 +122,17 @@ header:after{
 .bar:after{
     transform: translateY(8px);
 }
-
-.big-title{
+/* logo samsung */
+.big-samsung{
     position: absolute;
     left : 170px;
     z-index: 30;
     line-height: 4rem;
     top: calc(40% - 2rem);
-    width: 100%;
-    font-size: 5rem;
-    font-weight: 600;
-    color: #fff;
+    width: 30%;
 }
+
+/* tulisan berjalan */
 .big-titlee {
     position: absolute;
     left : 190px;
@@ -187,10 +173,12 @@ header:after{
     
     }
 
+    /* pembatas bagian bawah */
 section{
     width: 100%;
     background-color: black;
     position: relative;
+    margin-top: -50px;
 }
 
 section .container{
@@ -210,6 +198,10 @@ section .container > *{
     margin: 2rem;
 }
 
+.text {
+    margin-top: -55px;
+}
+/* tulisan about */
 .content{
     color: #fff;
     transform: translateY(-50px);
@@ -225,7 +217,7 @@ section .container > *{
     margin-bottom: 1rem;
     padding-bottom: .5rem;
     position: relative;
-    
+
 }
 
 .border{
@@ -239,7 +231,7 @@ section .container > *{
 
 .shadow{
     position: absolute;
-    bottom: 100%;
+    bottom: 92%;
     height: 300px;
     width: 100%;
     left: 0;
@@ -255,7 +247,7 @@ section .container > *{
 
 .slider{
 	max-width: 900px;
-	border:10px solid  #29a8e2;
+	border:5px solid  #b7b9b9;
 	margin:80px auto;
 	position: relative;
 	overflow: hidden;
@@ -278,7 +270,7 @@ section .container > *{
 }
 .slider .left-slide:hover,.slider .right-slide:hover{
  box-shadow: 0px 0px 10px black;
- background-color: #29a8e2;
+ background-color: #747474;
 }
 
 .slider .left-slide{
@@ -290,7 +282,7 @@ section .container > *{
 .slider .slider-items .item img{
 	max-width: 100%;
 	display: block;
-	animation:zoom 1s ease;
+	animation:zoom 2s ease;
 }
 
 @keyframes zoom{
@@ -311,8 +303,8 @@ left: 0px;
 background-color: rgba(0,0,0,.5);
 line-height: 60px;
 text-align: center;
-color: #ffffff;
-font-size: 30px;
+color: #ffffff8c;
+font-size: 15px;
 
 }
 
