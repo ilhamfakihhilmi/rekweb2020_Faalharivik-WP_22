@@ -2,30 +2,6 @@
 
 <?= $this->section('content'); ?>
 
-<?php
-function get_CURL($url)
-{
-    $curl = curl_init();
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    $result = curl_exec($curl);
-    curl_close($curl);
-
-    return  json_decode($result, true);
-}
-
-$result = get_CURL('https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=UC1dI4tO13ApuSX0QeX8pHng&key=AIzaSyBh-Eh5eK6F8ozKqRn6GxljhgS7V_3cxtQ');
-
-$youtubeProfilePic = $result['items'][0]['snippet']['thumbnails']['medium']['url'];
-$channelName = $result['items'][0]['snippet']['title'];
-$description = $result['items'][0]['snippet']['description'];
-$subscriber = $result['items'][0]['statistics']['subscriberCount'];
-// $usernameIG = $result['data']['username'];
-// $profileIG = $result['data']['profile_picture'];
-// $followers = $result('data, followers');
-// $followings = $result('data, followings');
-?>
-
 <!-- banner -->
 <header class="v-header containers">
     <div class="fullscreen-video-wrap">
@@ -113,17 +89,16 @@ $subscriber = $result['items'][0]['statistics']['subscriberCount'];
     </div>
 </section>
 
-<!-- Social Media -->
+<!-- Testimonials -->
 <section class="testimonials">
-    <h2 class="heading">Social Media</h2>
+    <h2 class="heading">What Our Cliant Says</h2>
     <div class="container">
         <div class="contentBx" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
             <div>
-                <h2>Youtube</h2>
-                <img src="<?= $youtubeProfilePic ?>" width="50" class="rounded-circle img-thumbnail">
-                <h5><?= $channelName; ?></h5>
-                <p><?= $description ?></p>
-                <p><?= $subscriber; ?> Subscribers</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nobis ad qui suscipit
+                    vitae reiciendis, molestiae obcaecati adipisci dolorum illo omnis eius, praesentium architecto
+                    repudiandae sapiente ab dolor quibusdam veritatis?</p>
+                <h3>Someone Famous</h3>
             </div>
         </div>
         <div class="contentBx" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-400px;">
