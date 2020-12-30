@@ -8,9 +8,16 @@
             <div class="nav_link">
                 <li><a href="/">Home</a></li>
                 <li><a href="/pages/about">Product</a></li>
-                <li><a href="/komik">Komik</a></li>
-                <li><a href="/orang">Orang</a></li>
-                <a class="cta_nav" href="/pages/contact"><button class="btn_nav">Contact</button></a>
+                <!-- <li><a href="/komik">Komik</a></li>
+                <li><a href="/orang">Orang</a></li> -->
+                <li><a href="/pages/contact">Contact</a></li>
+                <!-- <a class="cta_nav" href="/pages/contact"><button class="btn_nav">Contact</button></a> -->
+                <?php if(logged_in()) : ?>
+                <li><a href="/user/index">My Profile</a></li>
+                <?php else : ?>
+                <li><a href="/login">Login</a></li>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>
