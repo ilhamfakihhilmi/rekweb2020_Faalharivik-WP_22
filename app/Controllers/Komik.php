@@ -15,6 +15,13 @@ class Komik extends BaseController
     {
         // $komik = $this->komikModel->findAll();
 
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $komik = $this->komikModel->search($keyword);
+        } else {
+            $komik = $this->komikModel;
+        } 
+
         $data = [
             'title' => 'Daftar Komik',
             'komik' => $this->komikModel->getKomik()
