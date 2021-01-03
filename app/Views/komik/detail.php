@@ -1,36 +1,52 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h2 class="mt-2">Detail Komik</h2>
-            <div class="card mb-3" style="max-width: 540px;">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="/img/<?= $komik['sampul']; ?>" class="card-img" alt="...">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $komik['judul']; ?></h5>
-                            <p class="card-text"><b>Penulis : </b><?= $komik['penulis']; ?></p>
-                            <p class="card-text"><small class="text-muted"><b>Penerbit : </b><?= $komik['penerbit']; ?></small></p>
+<div class="container con_detail ">
 
-                            <a href="/komik/edit/<?= $komik['slug']; ?>" class="btn btn-warning">Edit</a>
-
-                            <form action="/komik/<?= $komik['id']; ?>" method="post" class="d-inline">
-                                <?= csrf_field(); ?>
-                                <input type="hidden" name="_method" value="DELETE">
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('apakah anda yakin?');">Delete</button>
-                            </form>
-
-                            <br><br>
-                            <a href="/komik">Kembali ke Daftar Komik</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="product-detail">
+        <div class="imagery">
+            <img src="/img/<?= $komik['sampul']; ?>" class="card-img" alt="...">
         </div>
-    </div>
+        <div class="detail">
+            <h1><?= $komik['judul']; ?></h1>
+            <h2>Harga</h2>
+            <h3></b><?= $komik['penerbit']; ?></h3>
+            <div class="options">
+                <h2>Spesifikasi</h2>
+                <h2><?= (old('penulis')) ? old('penulis') : $komik['penulis']; ?></h2>
+                <!-- <div class="capacity btn_grid">
+                    <div class="btn_wrap">
+                        <button class="size selected">64GB</button>
+                    </div>
+                    <div class="btn_wrap">
+                        <button class="size">128GB</button>
+                    </div>
+                </div> -->
+                <div class="colours btn_grid">
+                    <!-- <div class="btn_wrap">
+                        <button type="button" class="colour blue selected" data-name="blue" data-colour="#2484E4">
+                            Blue
+                        </button>
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="colour red" data-name="red" data-colour="#AF1E2D">
+                            Red
+                        </button>
+                    </div> -->
+                    <form action="/komik/<?= $komik['id']; ?>" method="post" class="d-inline">
+                        <?= csrf_field(); ?>
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn_delete" onclick="return confirm('apakah anda yakin?');">Delete</button>
+                    </form>
+
+                    <form action="/komik/edit/<?= $komik['slug']; ?>" class="d-inline">
+                    <?= csrf_field(); ?>
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn_edit">Edit</button>
+                    </form>
+        </div>
+
+
+        
 </div>
 <?= $this->endSection(); ?>

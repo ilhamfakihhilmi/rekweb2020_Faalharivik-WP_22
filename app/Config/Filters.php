@@ -19,7 +19,7 @@ class Filters extends BaseConfig
 	public $globals = [
 		'before' => [
 			'honeypot',
-			'login',
+			// 'login',
 			// 'csrf',
 		],
 		'after'  => [
@@ -37,6 +37,6 @@ class Filters extends BaseConfig
 	// that they should run on, like:
 	//    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
 	public $filters = [
-		//'login' => ['before' => ['komik']],
+		'login' => ['before' => ['contact']],
 	];
 }

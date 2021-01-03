@@ -1,17 +1,19 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container">
+
+
+<div class="container con_ubahdata">
     <div class="row">
         <div class="col-8">
-            <h2 class="my-3">Form Ubah Data Komik</h2>
+            <h2 class="my-3">Ubah Data</h2>
 
             <form action="/komik/update/<?= $komik['id']; ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
                 <input type="hidden" name="slug" value="<?= $komik['slug']; ?>">
                 <input type="hidden" name="sampulLama" value="<?= $komik['sampul']; ?>">
                 <div class="form-group row">
-                    <label for="judul" class="col-sm-2 col-form-label">Judul</label>
+                    <label for="judul" class="col-sm-2 col-form-label">Jenis</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : ''; ?>" id="judul" name="judul" autofocus value="<?= (old('judul')) ? old('judul') : $komik['judul']; ?>">
                         <div id="validationServer03Feedback" class="invalid-feedback">
@@ -19,14 +21,15 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="form-group row">
-                    <label for="penulis" class="col-sm-2 col-form-label">Penulis</label>
+                    <label for="penulis" class="tulisan_spek col-sm-2 col-form-label">Spesifikasi</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="penulis" name="penulis" value="<?= (old('penulis')) ? old('penulis') : $komik['penulis']; ?>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="penerbit" class="col-sm-2 col-form-label">Penerbit</label>
+                    <label for="penerbit" class="col-sm-2 col-form-label">Harga</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="penerbit" name="penerbit" value="<?= (old('penerbit')) ? old('penerbit') : $komik['penerbit']; ?>">
                     </div>

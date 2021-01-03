@@ -2,17 +2,38 @@
 
 <?= $this->section('content'); ?>
 
+<?php
+function get_CURL($url)
+{
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    $result = curl_exec($curl);
+    curl_close($curl);
+
+    return  json_decode($result, true);
+}
+
+$result = get_CURL('https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=UC1dI4tO13ApuSX0QeX8pHng&key=AIzaSyBh-Eh5eK6F8ozKqRn6GxljhgS7V_3cxtQ');
+
+$youtubeProfilePic = $result['items'][0]['snippet']['thumbnails']['medium']['url'];
+$channelName = $result['items'][0]['snippet']['title'];
+$description = $result['items'][0]['snippet']['description'];
+$subscriber = $result['items'][0]['statistics']['subscriberCount'];
+?>
+
 <!-- banner -->
-<header class="v-header containers">
-    <div class="fullscreen-video-wrap">
-        <video src="img/intro.mp4" autoplay="true" loop="true"></video>
-    </div>
-    <div class="header-overlay"></div>
-    <div class="header-content">
-        <h1>Welcome Everyone</h1>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis quasi ullam aperiam!</p>
-    </div>
-</header>
+
+    <header class="v-header containers">
+        <div class="fullscreen-video-wrap">
+            <video src="img/intro.mp4" autoplay="true" loop="true"></video>
+        </div>
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <h1>Welcome To Faalharivik-WP</h1>
+            <p>Find your favorite gadget!</p>
+        </div>
+    </header>
 
 
 <!-- About -->
@@ -20,134 +41,37 @@
     <div class="contentBx">
         <h2 class="heading" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">About Us
         </h2>
-        <p class="text" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-500px;">Lorem ipsum
-            dolor sit, amet consectetur adipisicing elit. Minus inventore exercitationem
-            maiores tempora consequuntur distinctio adipisci officia perspiciatis.<br><br>Lorem ipsum dolor sitamet,
-            consectetur adipisicing elit. Magnam
-            amet distinctio Eos, soluta fugiat nulla quidem
-            numquam laudantium aliquam facere voluptatem nihil temporibus.
-            nisi exercitationem debitis voluptatum atque beatae laborum.</p>
+        <p class="text" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-500px;">Faalharivik-WP is a website for people who want a new gadget but didn't know the difference a gadget between each other<br><br>You can search the products what you want and read carefully the details, so you can find your favorite gadget</p>
     </div>
     <div class="imgBx" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:200px;"></div>
 </section>
 
-<!-- services -->
-<section class="services">
-    <h2 class="heading" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:500px;">Our Services
-    </h2>
-    <p class="text" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:1;right:500px;">Lorem, ipsum
-        dolor sit amet consectetur adipisicing elit. Exercitationem error odio cumque sint
-        voluptatem
-        voluptas doloribus laboriosam consectetur necessitatibus assumenda, ipsum nulla atque quae, illum,
-        aspernatur</p>
-    <div class="container">
-        <div class="serviceBx" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-150px;">
-            <div>
-                <img src="img/icon1.png">
-                <h2>Design</h2>
-            </div>
-        </div>
-        <div class="serviceBx" data-center-center="opacity:1;bottom:0;" data-0-bottom="opacity:0;bottom:-150px;">
-            <div5 <img src="img/icon2.png">
-                <h2>Development</h2>
-            </div5>
-        </div>
-        <div class="serviceBx" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-150px;">
-            <div>
-                <img src="img/icon3.png">
-                <h2>Branding/h2>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- technology -->
-<section class="technology">
-    <div class="contentBx" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
-        <h2 class="heading">We use cutting edge technology</h2>
-        <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis molestias illo consequatur
-            voluptate nemo. Suscipit vel provident voluptatibus facilis aliquid! Architecto ipsam optio itaque
-            ratione voluptatibus at omnis labore assumenda.</p>
-    </div>
-    <div class="imgBx" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-400px;">
-        <img src="img/tech.png" alt="">
-    </div>
-</section>
-
-<!-- Client -->
-<section class="client">
-    <h2 class="heading" data-center-center="opacity:1;top:0;" data-0-bottom="opacity:0;top:-100px;">Our Clients</h2>
-    <p class="text" data-center-center="opacity:1;bottom:0;" data-0-bottom="opacity:0;bottom:-100px;">Lorem ipsum
-        dolor sit amet consectetur, adipisicing elit. Hic ratione vero officiis quia
-        voluptatum sit natus minus deserunt suscipit? Vitae vero, cupiditate eveniet quos odio modi? Maxime mollitia
-        nobis tenetur!</p>
-    <div class="imgBx">
-        <img src="img/brand1.png" data-center-center="top:0;" data-0-bottom="top:100px;">
-        <img src="img/brand2.png" data-center-center="top:0;" data-0-bottom="top:150px;">
-        <img src="img/brand3.png" data-center-center="top:0;" data-0-bottom="top:200px;">
-        <img src="img/brand4.png" data-center-center="top:0;" data-0-bottom="top:250px;">
-    </div>
-</section>
-
-<!-- Testimonials -->
+<!-- Social Media -->
 <section class="testimonials">
-    <h2 class="heading">What Our Cliant Says</h2>
+    <h2 class="heading">Social Media</h2>
     <div class="container">
         <div class="contentBx" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nobis ad qui suscipit
-                    vitae reiciendis, molestiae obcaecati adipisci dolorum illo omnis eius, praesentium architecto
-                    repudiandae sapiente ab dolor quibusdam veritatis?</p>
-                <h3>Someone Famous</h3>
+                <h2>YouTube</h2>
+                <img src="<?= $youtubeProfilePic ?>" width="50" class="rounded-circle img-thumbnail">
+                <h5><?= $channelName; ?></h5>
+                <p><?= $description ?></p>
+                <p><?= $subscriber; ?> Subscribers</p>
             </div>
         </div>
         <div class="contentBx" data-center-center="opacity:1;right:0;" data-0-bottom="opacity:0;right:-400px;">
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nobis ad qui suscipit
-                    vitae reiciendis, molestiae obcaecati adipisci dolorum illo omnis eius, praesentium architecto
-                    repudiandae sapiente ab dolor quibusdam veritatis?</p>
-                <h3>Someone Famous</h3>
+                <p>The social media on the side is a YouTube channel that reviews the latest gadget products, if the information here is incomplete then you can watch a videos from that channel</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- contact -->
-<section class="contact">
-    <div data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
-        <h2 class="heading">Contact Us</h2>
-        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo voluptas officiis rem eaque
-            ex?
-            Saepe autem nesciunt, soluta modi tempora, excepturi quibusdam sint molestiae error necessitatibus ex
-            dolorem repellat aut!</p>
-    </div>
-</section>
-<section class="about">
-    <div class="contentBx redbg">
-        <div class="form" data-center-center="opacity:1;left:0;" data-0-bottom="opacity:0;left:-400px;">
-            <div class="inputBx">
-                <input type="text" name="" placeholder="Full Name">
-            </div>
-            <div class="inputBx">
-                <input type="text" name="" placeholder="Email Address">
-            </div>
-            <div class="inputBx">
-                <input type="text" name="" placeholder="Mobile No.">
-            </div>
-            <div class="inputBx">
-                <textarea placeholder="Write your masage here"></textarea>
-            </div>
-            <div class="inputBx">
-                <input type="submit" name="" value="Send">
-            </div>
-        </div>
-    </div>
-    <div class="imgBx2"></div>
-</section>
 
 <!-- footer -->
 <section class="footer">
-    <p class="text">Design & Developer By Ilham Fakih Hilmi</p>
+    <p class="text">Design & Developer By Faalharivik-WP</p>
     <ul>
         <p class="text">Follow Us On : </p>
         <li><a href="#"><img src="img/facebook.png"></a></li>

@@ -10,6 +10,11 @@ class KomikModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['judul', 'slug', 'penulis', 'penerbit', 'sampul'];
 
+    public function search($keyword)
+    {
+        return $this->table('judul')->like('slug', $keyword)->orLike('penulis', $keyword);
+    }
+    
     public function getKomik($slug = false)
     {
         if ($slug == false) {
